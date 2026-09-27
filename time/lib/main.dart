@@ -6,6 +6,9 @@ void main() {
 }
 
 class Tempo extends StatelessWidget {
+  const new({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

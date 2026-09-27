@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class WeatherHeader extends StatelessWidget {
-  const WeatherHeader({super.key});
+  
+  final String local;
+  final String atualizado;
+
+  const WeatherHeader({super.key, required this.local, required this.atualizado});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +17,7 @@ class WeatherHeader extends StatelessWidget {
             Icon(Icons.location_on_outlined, color: Colors.white),
             SizedBox(width: 8),
             Text(
-              'Cuiabá, MT',
+              local,
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 16,
@@ -23,7 +27,7 @@ class WeatherHeader extends StatelessWidget {
           ],
         ),
         Text(
-          'Atualizado agora',
+          atualizado,
           style: TextStyle(color: Colors.white70, fontSize: 12),
         ),
       ],

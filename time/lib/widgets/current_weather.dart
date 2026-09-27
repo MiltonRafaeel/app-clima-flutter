@@ -1,18 +1,28 @@
 import 'package:flutter/material.dart';
 
 class CurrentWeather extends StatelessWidget {
-  const new({
+
+  final IconData icone;
+  final int temperatura;
+  final String comoEsta;
+  final int sensacao;
+
+  const CurrentWeather({
     super.key,
+    required this.icone,
+    required this.temperatura,
+    required this.comoEsta,
+    required this.sensacao,
   });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Icon(Icons.wb_cloudy, size: 100, color: Colors.white),
+        Icon(icone, size: 100, color: Colors.white),
         SizedBox(height: 8),
         Text(
-          '29°',
+          '$temperatura°',
           style: TextStyle(
             color: Colors.white,
             fontSize: 72,
@@ -21,7 +31,7 @@ class CurrentWeather extends StatelessWidget {
         ),
         SizedBox(height: 3),
         Text(
-          'Parcialmente nublado',
+          comoEsta,
           style: TextStyle(
             color: Colors.white,
             fontSize: 18,
@@ -30,7 +40,7 @@ class CurrentWeather extends StatelessWidget {
         ),
         SizedBox(height: 8),
         Text(
-          'Sensação térmica de 32°',
+          'Sensação térmica de $sensacao°',
           style: TextStyle(
             color: Colors.white70,
             fontSize: 14,
